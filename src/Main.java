@@ -1,6 +1,9 @@
 import es1.Rettangolo;
 import es2.Chiamata;
 import es2.Sim;
+import es3.Articolo;
+import es3.Carrello;
+import es3.Cliente;
 
 import static es2.Sim.stampaSim;
 
@@ -31,6 +34,21 @@ public class Main {
         s1.getChiamate()[3] = chiamata4;
         s1.getChiamate()[4] = chiamata5;
         stampaSim(s1);
+
+
+        Cliente c1 = new Cliente("t6sgc6", "Mario", "Bros", "mario@bros.com", "15/03/99" );
+
+        Articolo articolo1 = new Articolo("gshtdnf", "lavatrice", 250.99, 150);
+        Articolo articolo2 = new Articolo("hjgbvsdf", "Smartphone", 120, 50);
+
+        Articolo[] articoliSelezionati = {articolo1 , articolo2};
+        Carrello carrello1= new Carrello(c1, articoliSelezionati);
+
+        double totale = Carrello.prezzoTotale(articoliSelezionati);
+
+        System.out.println("Sono " + c1.getNome() + " " + c1.getCognome() + " ho comprato " + articolo1.getDescrizione() + " e " + articolo2.getDescrizione() + " al prezzo totale di: " + totale + " euro ");
+
+
 
 
 
